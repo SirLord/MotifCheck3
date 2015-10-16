@@ -1,4 +1,4 @@
-motifcheck2
+MotifCheck3
 ===========
 
-Package to facilitate detection of DNA motifs from a PF matrix
+A Python package to facilitate detection of DNA motifs from a PF matrix.
