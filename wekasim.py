@@ -3,7 +3,6 @@
 #Saves CSV File, opens CSV File in Java.weka
 #Runs Random Forrest Classifier on the data, outputs the accuracy and matrixes to a file.
 #Rinse and Repeat
-#export CLASSPATH=$CLASSPATH:/home/Andrew/weka/weka-3-6-12/weka.jar
 
 import os
 import sys
@@ -13,6 +12,7 @@ with warnings.catch_warnings():
     import pandas as pd 
 import numpy as np
 
+os.system("export CLASSPATH=$CLASSPATH:/home/Andrew/weka/weka-3-6-12/weka.jar")
 
 def mainfunction(times):
     counter = 0 
@@ -27,7 +27,7 @@ def mainfunction(times):
         datafile.to_csv("rf_data_randomized.csv",index=False)
         #print 'CSV Written, proceeding to RF simulation'
         
-        os.system("java -Xmx1024m weka.classifiers.trees.RandomForest -t newdata.csv -o -I 250 -K 0 -S 1 -i | grep -A 27 'Stratified' >> weka.out")
+        os.system("java -Xmx1024m weka.classifiers.trees.RandomForest -t rf_data_randomized.csv -o -I 100 -K 0 -S 1 -i | grep -A 27 'Stratified' >> simulations.out")
         counter += 1
         if counter % 100 == 0:
             print( str(counter) + ' simulations complete...')
