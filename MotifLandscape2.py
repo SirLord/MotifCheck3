@@ -66,7 +66,7 @@ elif "3R" in chromosome:
     chrLen = 27905053
     print("Chr 3R detected...")
 elif "chr4" in chromosome:
-    chrLen = 1378900
+    chrLen = 1478900 #13m
 elif "X" in chromosome:
     chrLen = 22422827
     print("Chr X detected...")
